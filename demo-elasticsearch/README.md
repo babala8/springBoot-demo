@@ -9,6 +9,9 @@
 1. 下载镜像：`docker pull elasticsearch:6.5.3`
 
 2. 运行容器：`docker run -d -p 9200:9200 -p 9300:9300 --name elasticsearch-6.5.3 elasticsearch:6.5.3`
+docker run -e ES_JAVA_OPTS="-Xms256m -Xmx256m" -e "discovery.type=single-node" -d -p 9200:9200 -p 9300:9300 --name elasticsearch-6.5.3 elasticsearch:6.5.3
+# 第一个参数设置运存为256m，ES默认启动占2g，第二个参数设置启动方式为单个节点（不设置启动后会自动停止，日志会输出错误消息，低版本不用设置，至少docker默认拉取的5.6.12版本只需要设置第一个参数即可）
+
 
 3. 进入容器：`docker exec -it elasticsearch-6.5.3 /bin/bash`
 
