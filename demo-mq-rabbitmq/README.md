@@ -3,6 +3,8 @@
 > 此 demo 主要演示了 Spring Boot 如何集成 RabbitMQ，并且演示了基于直接队列模式、分列模式、主题模式、延迟队列的消息发送和接收。
 
 ## 注意
+mq网址  http://localhost:15672
+用户名：admin  密码: admin
 
 作者编写本demo时，RabbitMQ 版本使用 `3.7.7-management`，使用 docker 运行，下面是所有步骤：
 
