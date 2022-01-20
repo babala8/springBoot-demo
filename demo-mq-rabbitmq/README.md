@@ -5,6 +5,14 @@
 ## 注意
 mq网址  http://localhost:15672
 用户名：admin  密码: admin
+添加guest用户，及vhost
+
+注意：延迟队列插件可本地下载上传docker
+1) cd C:\Users\Admin\Desktop，切换路径到桌面
+2) 通过 `docker ps -a 命令获取 短Id/容器名称`
+3) 获取容器id全称 `docker inspect -f '{{.Id}}' 短Id/容器名称`
+4) 将文件rabbitmq_delayed_message_exchange-3.9.0.ez传入到容器/plugins目录下
+`docker cp rabbitmq_delayed_message_exchange-3.9.0.ez 59ab4372cbeb842354acb7004a2bd3acb4da36736ae1121379794f8edbc7c68c:/plugins`
 
 作者编写本demo时，RabbitMQ 版本使用 `3.7.7-management`，使用 docker 运行，下面是所有步骤：
 
