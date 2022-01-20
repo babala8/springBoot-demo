@@ -6,10 +6,10 @@ spring:
   rabbitmq:
     host: localhost
     port: 5672
-    #username: guest
-    username: admin
-    #password: guest
-    password: admin
+    username: guest
+#    username: admin
+    password: guest
+#    password: admin
     virtual-host: /
     # 手动提交消息
     listener:
