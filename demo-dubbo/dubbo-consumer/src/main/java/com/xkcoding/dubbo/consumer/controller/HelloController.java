@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @Slf4j
 public class HelloController {
-    @Reference
+    @Reference // (url = "")
     private HelloService helloService;
 
     @GetMapping("/sayHello")
