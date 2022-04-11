@@ -11,6 +11,7 @@ spring:
     - "classpath:db/schema.sql"
     data:
     - "classpath:db/data.sql"
+    #数据库连接池hikari，一般用druid
     hikari:
       minimum-idle: 5
       connection-test-query: SELECT 1 FROM DUAL
@@ -20,6 +21,8 @@ spring:
       pool-name: SpringBootDemoHikariCP
       max-lifetime: 60000
       connection-timeout: 30000
+
+#Mybatis SQL打印(方法接口所在的包，不是Mapper.xml)
 logging:
   level:
     com.xkcoding: debug
@@ -28,5 +31,7 @@ mybatis:
   configuration:
     # 下划线转驼峰
     map-underscore-to-camel-case: true
+    #Mapper.xml所在的包，根目录classpath
   mapper-locations: classpath:mappers/*.xml
+  #配置Mybatis数据返回类型别名(默认别名是aliases类名)
   type-aliases-package: com.xkcoding.orm.mybatis.entity
